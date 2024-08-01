@@ -1,0 +1,253 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing : border-box; /* Ensures padding and border are included in element's total width and height */
+}
+
+.header1{
+    /* background-color: rgb(243, 210, 210); */
+    /* background-color: black; */
+    position: relative;
+    display : flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    height : 8vh;   
+}
+
+.character{
+    font-size: 50px;
+    font-weight: 50;
+    /* position: relative; */
+    color: black;
+    font-style: italic;
+    }
+
+.jumpanimation{
+    animation: jump 2s ease alternate;
+    }
+
+.header1 ul{
+    list-style-type: none;
+    display : flex;
+}
+
+.header1 ul li{
+    font-size: 20px;
+    font-weight: 300;
+    padding : 10px 15px;
+    /* display: inline; */
+}
+
+@keyframes line {
+    0%{
+        width : 0vw;
+    }
+
+    50%{
+        width : 50vw;
+    }
+
+    100%{
+        width : 100vw;
+    }
+}
+@keyframes jump {
+    0% {
+        bottom: 0; 
+    }
+    50% {
+        bottom: 100px; 
+    }
+    100% {
+        bottom: 0; 
+    }
+}
+
+.animate1{
+    width : 0px;
+    height: 5px;
+    background-color: rgb(245, 128, 185);
+    animation: line 8s infinite;
+}
+
+.slider1
+{
+    height: 90vh;
+    background-color: black;
+    position: relative;
+}
+.slider{
+   position: relative;
+    height: 100%;
+    width : auto;
+    object-fit: contain;
+    background-image: url("https://images.pexels.com/photos/8145335/pexels-photo-8145335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-repeat: no-repeat; 
+    background-size:cover;  /* Ensures the image covers the entire area */  
+    background-position :center center; 
+    opacity: 0.33;
+}
+
+.bright-text {
+    color: white; 
+    font-size: 50px; 
+    font-weight: bold;
+    text-align: center;
+    margin-top: -155px;
+}
+
+.blocks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding : 25px;
+}
+
+.blocks div{
+    width : 15vw;
+    height : 35vh;
+    overflow : hidden;
+    text-align: center;
+    border : solid 1px black;
+}
+
+.blocks div img{
+    display : flex;
+    height : 100%;
+    width : 100%;
+    object-fit : cover;
+}
+
+.bestsellername{
+    height : 5vh;
+    padding : 7px;
+    color : black;
+    border : solid 1px black;
+}
+
+
+.best{
+    color: black;
+    font-size: 30px;
+    font-style: bold;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 50;
+    font-style: normal;
+    border-bottom: 1px solid black;
+    width : 20vmax;
+    padding : 2vh;
+    margin : auto;
+}
+.notextdec{
+    text-decoration: none;
+    color: black;
+    font-weight: 12px;
+    
+}
+/* a:hover{
+    background-color:rgb(228, 213, 213); 
+    border: 1px solid black;
+    opacity : 0.5;
+    height: 10px;
+    border-radius:10px;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+} */
+
+.pos{
+    margin-left: 600px;
+}
+.nav
+{
+    display : flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+    height : 5vh;
+    background-color: rgb(252, 189, 255);
+}
+
+.black-text{
+    color : black;
+}
+
+.container {
+    display: flex;
+    margin: 2vmax auto;
+    width: 85vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+  
+  .productCard {
+    width: 14vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-left:1vmax;
+    padding-right:1vmax; 
+    padding-bottom: 1vmax;
+  }
+  
+  .productCard > img {
+    width: 14vmax;
+  }
+  
+  .productCard > div {
+    margin: 0.5vmax;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .productCardSpan {
+    margin: 0.5vmax;
+    font: 300 0.7vmax "Roboto";
+  }
+  
+  .productCard > p {
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+  }
+  
+  .productCard > span {
+    margin: 0.5vmax;
+    color: black;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1vmax;
+  }
+  
+  .productCard:hover {
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+    transform: translateY(-1vmax);
+  }
+  
+  @media screen and (max-width: 600px) {
+    .productCard > p {
+      font-size: 1.7vmax;
+    }
+  
+    .productCard > div {
+      margin: 0vmax;
+      display: block;
+    }
+  
+    .productCard > span {
+      font-size: 1.5vmax;
+    }
+  
+    .productCard > div > span {
+      margin: 0 0.5vmax;
+      font: 300 1vmax "Roboto";
+    }
+  }

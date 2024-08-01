@@ -1,0 +1,29 @@
+.loading{
+    width : 100vw;
+    height : 100vh;
+    background-color: white; 
+    display: grid;
+    place-items: center;
+    max-width: 100%;
+}
+
+.loading > div{
+    width: 10vmax;
+    background-color: rgba(203, 199, 196, 0.895);
+    height: 0.5vmax;
+    /* border: 5px solid rgb(21, 19, 19); */
+    border-radius: 50%;
+    animation: loadingRotate 800ms infinite;
+}
+
+.loading > div > p{
+    display: flex;
+    align-items :center;
+    justify-content: center;
+}
+
+@keyframes loadingRotate{
+    to{
+        transform:rotateZ(-360deg);
+    }
+}

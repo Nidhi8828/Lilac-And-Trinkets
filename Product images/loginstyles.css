@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* .body{
+    background-image: url("https://images.pexels.com/photos/7291997/pexels-photo-7291997.jpeg?auto=compress&cs=tinysrgb&w=600");
+} */
+.container{
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(rgba(255, 186, 250, 0.8),rgba(87, 7, 90, 0.8)),url('lilac.jpg'); */
+    background-image:url("‎lilac.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.form-box{
+    width:90%;
+    max-width: 450px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,50%);
+    background: transparent;
+    padding: 5px 60px 70px;
+    text-align: center;
+    justify-content: center;
+}
+.form-box h1{
+    font-size: 50px;
+    margin-bottom: 60px;
+    color:rgb(133, 30, 149);
+    position: relative;
+}
+
+.input-field{
+    background: white;
+    margin:15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    overflow: hidden;
+}
+input{
+    width:100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding:10px 15px;
+}
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+.btn-field button{
+    border-radius: 20px;
+    flex-basis: 48%;
+    height: 40px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background:rgb(188, 110, 200);
+}
+
+.btn-field button.disable{
+    background:white;
+    color:black;
+}
