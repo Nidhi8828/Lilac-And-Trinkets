@@ -6,9 +6,10 @@ import ProductCard from "./ProductCard.js"
 import MetaData from "../layout/MetaData"
 import { clearErrors, getProduct } from "../../actions/productAction.js"
 import { useSelector, useDispatch } from "react-redux"
-import Header from '../layout/Header/Header.js'
+//import Header from '../layout/Header/Header.js'
 import Loader from "../layout/Loader/Loader.js"
 import {useAlert} from "react-alert"
+// import Footer from "../layout/Footer/footer.js"
 
 const Home = (() => {
 
@@ -38,22 +39,17 @@ const Home = (() => {
     <p className="bright-text">Welcome to Lilac&Trinkets</p>
     </div>
     </div>
-    <div className="best">Featured Products
-    </div>
+    <div className="best">Featured Products</div>
     <div className="container" id="container">
-        {/* <Product product= {product} />
-        <Product product= {product} />
-        <Product product= {product} />
-        <Product product= {product} />
-        <Product product= {product} /> */}
         {products && products.map((product) => (
           <ProductCard product={product} />
         ))}
     </div>
+    
     </>}
     </>
   )
 }
 )
 
-export default Home
+export default Home;

@@ -11,10 +11,11 @@
   .products {
     display: flex;
     flex-wrap: wrap;
-    margin: 7vmax;
+    /* margin: 7vmax; */
     padding: 1vmax;
     justify-content: flex-start;
     /* min-height: 30vh; */
+    margin-left:22.5%;
   }
   
   .paginationBox {
@@ -68,10 +69,11 @@
   }
   
   .filterBox {
-    width: 5vmax;
+    width: 20%;
     position: absolute;
     top: 5vmax;
     left: 1vmax;
+   margin:auto;
   }
   
   .categoryBox {
@@ -81,11 +83,15 @@
   .category-link {
     list-style: none;
     color: rgba(0, 0, 0, 0.61);
-    font: 400 0.8vmax "Roboto";
-    margin: 0.4vmax;
+    /* font: 400 0.8vmax "Roboto"; */
+    font:400 20px "Roboto";
+    /* margin: 0.4vmax; */
+    margin :10%;
     cursor: pointer;
     transition: all 0.5s;
+    padding: 2%;
   }
+
   .category-link:hover {
     color: rgb(169, 92, 104);
   }

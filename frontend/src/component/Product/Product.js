@@ -105,8 +105,8 @@ const Products = ({ match }) => {
               ))}
             </ul>
 
-            <fieldset>
-              <Typography component="legend">Ratings Above</Typography>
+            <div>
+              <Typography >Ratings Above</Typography>
               <Slider
                 value={ratings}
                 onChange={(e, newRating) => {
@@ -117,7 +117,7 @@ const Products = ({ match }) => {
                 min={0}
                 max={5}
               />
-            </fieldset>
+            </div>
           </div>
           {resultPerPage < productsCount && (
             <div className="paginationBox">
