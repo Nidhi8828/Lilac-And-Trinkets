@@ -21,6 +21,8 @@ const ProductCard = ({product}) => {
        <p> {product.name} </p>
         <div>
             <ReactStars {...options} />
+        </div>
+        <div>
             <span>({product.numofre} Reviews)</span> {/*static value */}
         </div>
         <span>{`₹${product.price}`}</span>

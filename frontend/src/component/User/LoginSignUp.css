@@ -2,10 +2,16 @@
   color: black;
   background-position: center;
 }
+
+.header {
+  position: relative; /* or fixed, depending on your design */
+  z-index: 10; /* higher than .LoginSignUpContainer */
+}
+
 .LoginSignUpContainer {
-  width: 100vw;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)),url(459-background.png);
-  height: 100vh;
+  /* width: 100vw;
+   /* background-image: linear-gradient(rgba(0, 0, 0, 0.75),rgba(0, 0, 0, 0.75)),url("https://images.pexels.com/photos/8145335/pexels-photo-8145335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");  */
+   /* height: 100vh; 
   max-width: 100%;
   display: flex;
   justify-content: center;.LoginSignUpContainer {
@@ -15,11 +21,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(231, 231, 231);
-    position: fixed;
+    /* background-color: rgb(231, 231, 231); */
+    /* position: fixed; 
     top: 0%;
     left: 0;
-  }
+  } */
+
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Ensures it covers the full screen */
+  top: 0;
+  left: 0;
+  
+  /* Add background image */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+                    url("https://images.pexels.com/photos/8145335/pexels-photo-8145335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
   
   .LoginSignUpBox {
     background-color: white;
@@ -171,7 +194,7 @@
   
   @media screen and (max-width: 600px) {
     .LoginSignUpContainer {
-      background-color: white;
+      /* background-color: white; */
     }
     .LoginSignUpBox {
       width: 100vw;
@@ -221,11 +244,11 @@
     }
   }
   align-items: center;
-  background-color: rgba(51, 51, 247, 0.921);
+  /* background-color:white; */
   position: fixed;
   top: 0%;
   left: 0;
-}
+} 
 
 .loginsignupbox {
   background-color: white;
@@ -278,10 +301,6 @@
   transform: translateX(-100%) translateY(-100%);
 }
 
-       /* Make sure this matches the class name in JSX */
- 
-
-
 .loginform > div,
 .signupform > div {
   display: flex;
@@ -318,9 +337,9 @@
 
 .loginform > a:hover {
   color: black;
-}
+} 
 
-/* #registerImage > img {
+ #registerImage > img {
   width: 3vmax;
   border-radius: 100%;
 }
@@ -346,7 +365,7 @@
 #registerImage > input::file-selector-button:hover {
   background-color: rgb(235, 235, 235);
 }
- */
+
 .loginbtn,
 .signupbtn {
   border: none;
@@ -384,7 +403,7 @@
 
 @media screen and (max-width: 600px) {
   .loginsignupcontainer {
-    background-color: white;
+    /* background-color: white; */
   }
   .loginsignupbox {
     width: 100vw;
@@ -432,4 +451,105 @@
     font: 300 1.9vmax "Roboto";
     padding: 1.8vmax;
   }
-}
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
