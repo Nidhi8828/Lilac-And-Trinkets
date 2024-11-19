@@ -29,17 +29,16 @@ const productitem=new mongoose.Schema(
             type:String,
             required:[true,"Enter the name of the person"]
         },
-        // rating:{
-        //     type:Number,
-        //     required:[true,"Enter the rating"]
-        // },
+        rating:{
+            type:Number,
+           default:0
+        },
         comment:{
             type:String,
         }
     }],
     rating:{
         type:Number,
-        required:[true,"Enter the rating"],
         default:0
     },
     images:[{

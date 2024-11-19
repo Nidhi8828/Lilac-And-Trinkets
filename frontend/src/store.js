@@ -5,7 +5,7 @@ import { thunk } from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension";
 import { productReducer , productDetailsReducer} from "./reducers/productReducer";
 import { orderReducer,orderDetailsReducer,} from "./reducers/orderReducer";
-
+import logger from "redux-logger"
 
 //using redux-toolkit instead of redux core
 import {userReducer} from "./reducers/userReducer"
@@ -35,9 +35,6 @@ let initialState = {
 
 const middleware = [thunk];
 
-const store = createStore
-(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware))
-);
-
+const store=createStore(reducer,applyMiddleware(thunk,logger));
 export default store;
 //while working with redux, we need to maintain 3 things - reducer, action and constant...constant is not mandatory but it maintains neatness

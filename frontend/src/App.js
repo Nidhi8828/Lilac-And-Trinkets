@@ -17,7 +17,7 @@ import LoginSignUp from './component/User/LoginSignUp.js';
 import MyOrders from "./component/Order/MyOrders";
 import OrderDetails from "./component/Order/OrderDetails";
 import { DataGrid } from '@material-ui/data-grid';
-import Shipping from './component/Cart/Shipping.js';
+// import Shipping from './component/Cart/Shipping.js';
 // import OrderSuccess from "./component/Cart/OrderSuccess";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
 
@@ -46,7 +46,7 @@ function App() {
       <Route path="/products/:keyword" element={<Products />} />
       <Route exact path="/cart"  element={<Cart/>} />
       <Route exact path="/account"  element={<Profile/>} />
-      <Route exact path="/login/shipping" element={<Shipping/>} />
+      {/* <Route exact path="/login/shipping" element={<Shipping/>} /> */}
       {/* <Route exact path="/success" element={<OrderSuccess/>} /> */}
       <Route exact path="/orders" element={<MyOrders/>} />
       <Route exact path="/orders" element={<MyOrders/>} />
