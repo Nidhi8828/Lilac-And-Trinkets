@@ -44,7 +44,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { useSelector } from 'react-redux';
-
+import { logout } from '../../../actions/userAction';
 const Header = () => {
     const { user, loading, isAuthenticated } = useSelector((state) => state.user);
     

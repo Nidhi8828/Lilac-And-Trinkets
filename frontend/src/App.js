@@ -20,22 +20,33 @@ import { DataGrid } from '@material-ui/data-grid';
 // import Shipping from './component/Cart/Shipping.js';
 // import OrderSuccess from "./component/Cart/OrderSuccess";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
-
-
-
+import UserOptions from "./component/layout/Header/UserOption.js"
+import store from './store.js';
+import { loadUser } from './actions/userAction.js';
+// import { isAuthenticatedUser } from '../backend/middleware/auth.js';
+import { useSelector } from 'react-redux';
+import { logout } from './actions/userAction.js';
+import { useDispatch } from 'react-redux';
+const UserOption=({user})=>{
+  const dispatch=useDispatch()
+}
 function App() {
+  const { isAuthenticatedUser, user } = useSelector((state) => state.user);
+
   React.useEffect(()=>{
     WebFont.load({
       google:{
         families : ["Playfair Display", "serif","Times New Roman"]
       } //fonts should load after page is loaded so useEffect hook is used, load function of webfont is used to load  the fonts, an object is passed to load function
     })
+    store.dispatch(loadUser())
   }, []);
 
   return (
     <Router>
       <Routes>
         <Route path = '/' element = {<Layout/>} >
+        {isAuthenticatedUser&&<UserOptions user={user}/>}
       <Route exact path="/" element = {<Home/>} />
       {/* <Route exact path="/sad" element = {<Loader/>} /> */}
       <Route exact path="/product/:id" element = {<ProductDetails/>} />

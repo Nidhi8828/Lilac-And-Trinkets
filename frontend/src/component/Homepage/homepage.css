@@ -32,7 +32,22 @@
     list-style-type: none;
     display : flex;
 }
-
+/* .logoutButton {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logoutButton:hover {
+    background-color: #e84148;
+  } */
+  
 .header1 ul li{
     font-size: 20px;
     font-weight: 300;
