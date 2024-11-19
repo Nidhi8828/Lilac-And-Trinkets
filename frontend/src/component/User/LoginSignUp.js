@@ -9,6 +9,8 @@ import FaceIcon from "@material-ui/icons/Face";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, login, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
+import Header from "../layout/Header/Header";
+import Footer from "../layout/Footer/footer";
 
 const LoginSignUp = () => {
   const dispatch = useDispatch();
@@ -105,10 +107,12 @@ const LoginSignUp = () => {
 
   return (
     <Fragment>
+       {/* <Header/> */}
       {loading ? (
         <Loader />
       ) : (
         <Fragment>
+         
           <div className="LoginSignUpContainer">
             <div className="LoginSignUpBox">
               <div>
@@ -195,8 +199,10 @@ const LoginSignUp = () => {
               </form>
             </div>
           </div>
+          
         </Fragment>
       )}
+      {/* <Footer/> */}
     </Fragment>
   );
 };

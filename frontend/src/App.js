@@ -11,7 +11,7 @@ import Loader from "./component/layout/Loader/Loader.js"
 import ProductDetails from "./component/Product/ProductDetails.js"
 import Products from "./component/Product/Product.js"
 import Search from "./component/Product/Search.js"
-import AboutUs from "./component/AboutUs/AboutUs.js"
+import AboutUs from "./component/layout/AboutUs/AboutUs.js"
 import Cart from "./component/Cart/Cart.js"
 import LoginSignUp from './component/User/LoginSignUp.js';
 import MyOrders from "./component/Order/MyOrders";
@@ -42,7 +42,7 @@ function App() {
       <Route exact path="/products" element = {<Products/>} />
       <Route exact path="/search" element = {<Search/>} />
       <Route exact path="/login" element = {<LoginSignUp/>} />
-      <Route exact path="/about" element = {<AboutUs/>} />
+      <Route exact path="/aboutus" element = {<AboutUs/>} />
       <Route path="/products/:keyword" element={<Products />} />
       <Route exact path="/cart"  element={<Cart/>} />
       <Route exact path="/account"  element={<Profile/>} />
