@@ -21,8 +21,10 @@ import { DataGrid } from '@material-ui/data-grid';
 // import OrderSuccess from "./component/Cart/OrderSuccess";
 import ConfirmOrder from "./component/Cart/ConfirmOrder";
 import UserOptions from "./component/layout/Header/UserOption.js"
+import ProtectedRoute from './component/Routes/ProtectedRoute.js';
 import store from './store.js';
-import { loadUser } from './actions/userAction.js';
+import UpdatePassword from './component/User/UpdatePassword.js';
+import { loadUser, updatePassword } from './actions/userAction.js';
 // import { isAuthenticatedUser } from '../backend/middleware/auth.js';
 import { useSelector } from 'react-redux';
 import { logout } from './actions/userAction.js';
@@ -63,7 +65,7 @@ function App() {
       <Route exact path="/orders" element={<MyOrders/>} />
       <Route exact path="/order/confirm" element={<ConfirmOrder/>} />
       <Route exact path="/order/:id" element={<OrderDetails/>} />
-
+      <Route path="/password/update" element={<UpdatePassword />} />
       </Route>
       </Routes>   
     </Router>

@@ -6,7 +6,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { productReducer , productDetailsReducer} from "./reducers/productReducer";
 import { orderReducer,orderDetailsReducer,} from "./reducers/orderReducer";
 import logger from "redux-logger"
-
+import { profileReducer } from "./reducers/userReducer";
+import { forgotPasswordReducer } from "./reducers/userReducer";
 //using redux-toolkit instead of redux core
 import {userReducer} from "./reducers/userReducer"
 import { cartReducer } from "./reducers/cartReducer";
@@ -15,7 +16,9 @@ const reducer = combineReducers({
     productDetails:productDetailsReducer,
     user:userReducer,
     cart:cartReducer,
+    forgotPassword: forgotPasswordReducer,
     myOrders: orderReducer,
+    profile: profileReducer,
     orderDetails: orderDetailsReducer,
 });
 
