@@ -40,37 +40,90 @@
 
 
 
-
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import { useSelector } from 'react-redux';
-import { logout } from '../../../actions/userAction';
+import React from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../../actions/userAction"; // Import the logout action
+import { useAlert } from "react-alert"; // Alert for success notification
+import "./Header.css"
 const Header = () => {
-    const { user, loading, isAuthenticated } = useSelector((state) => state.user);
-    
-    return (
-        <>
-            <div className="header1">
-                <h1 className="character jumpanimation">Lilac&Trinkets</h1>
-                <div>
-                    <ul>
-                        <li><Link to="/" className="notextdec">Home</Link></li> 
-                        <li><Link to="/products" className="notextdec">Products</Link></li> 
-                        <li><Link to="/aboutus" className="notextdec">About Us</Link></li> 
-                        {!isAuthenticated && (
-                            <li><Link to="/login" className="notextdec">Login</Link></li>
-                        )}
-                        {isAuthenticated && (
-                            <li><Link to="/account" className="notextdec">{user.name}</Link></li> 
-                        )}
-                        <li><Link to="/search" className="notextdec"><i className="fa-solid fa-magnifying-glass black-text"></i></Link></li>
-                        <li><Link to="/cart" className="notextdec"><i className="fa-solid fa-cart-shopping black-text"></i></Link></li>
-                    </ul>
-                </div>
-            </div>
-            <div style={{ backgroundColor: 'grey', height: '1px' }}></div>
-        </>
-    );
-}
+  const { user, isAuthenticated } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const alert = useAlert();
+  const navigate = useNavigate(); // To navigate to the login page after logout
+
+  // Logout handler
+  const handleLogout = () => {
+    dispatch(logout());
+    alert.success("Logged out successfully!");
+    navigate("/login"); // Redirect to the login page
+  };
+
+  return (
+    <>
+      <div className="header1">
+        <h1 className="character jumpanimation">Lilac&Trinkets</h1>
+        <div>
+          <ul>
+            <li>
+              <Link to="/" className="notextdec">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/products" className="notextdec">
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/aboutus" className="notextdec">
+                About Us
+              </Link>
+            </li>
+            {isAuthenticated && user ? (
+  <li>
+    <Link to="/account" className="notextdec">
+      {user.name}
+    </Link>
+  </li>
+) : (
+  <li>
+    <Link to="/login" className="notextdec">
+      Login
+    </Link>
+  </li>
+)}
+
+            {isAuthenticated && (
+              <>
+                <li>
+                  <Link to="/account" className="notextdec">
+                    {user?.name}
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={handleLogout} className="logout-btn">
+                    Logout
+                  </button>
+                </li>
+              </>
+            )}
+            <li>
+              <Link to="/search" className="notextdec">
+                <i className="fa-solid fa-magnifying-glass black-text"></i>
+              </Link>
+            </li>
+            <li>
+              <Link to="/cart" className="notextdec">
+                <i className="fa-solid fa-cart-shopping black-text"></i>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style={{ backgroundColor: "grey", height: "1px" }}></div>
+    </>
+  );
+};
 
 export default Header;

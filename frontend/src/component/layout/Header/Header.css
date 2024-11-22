@@ -1,0 +1,15 @@
+.logout-btn {
+    background-color: tomato; /* Orange background */
+    color: white; /* White text */
+    border: none; /* Remove the default border */
+    padding: 10px 20px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px; /* Round the corners */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .logout-btn:hover {
+    background-color: orange; /* Darker orange when hovered */
+  }
+  

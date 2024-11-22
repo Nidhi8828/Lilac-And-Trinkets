@@ -39,6 +39,7 @@ import {
   USER_DETAILS_SUCCESS,
   USER_DETAILS_FAIL,
   CLEAR_ERRORS,
+  
 } from "../constants/userConstants";
 
 export const userReducer = (state = { user: {} }, action) => {
@@ -186,7 +187,8 @@ export const forgotPasswordReducer = (state = {}, action) => {
         loading: false,
         success: action.payload,
       };
-
+    
+      
     case FORGOT_PASSWORD_FAIL:
     case RESET_PASSWORD_FAIL:
       return {

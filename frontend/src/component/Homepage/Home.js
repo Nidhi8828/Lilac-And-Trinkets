@@ -6,15 +6,18 @@ import { clearErrors, getProduct } from "../../actions/productAction.js";
 import { useSelector, useDispatch } from "react-redux";
 import Loader from "../layout/Loader/Loader.js";
 import { useAlert } from "react-alert";
+import { logout } from "../../actions/userAction";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize useNavigate
   const { loading, error, products } = useSelector((state) => state.products);
 
-  const sliderRef = useRef(null); // Ref for the slider element
-  const textRef = useRef(null); // Ref for the text element
-  const [currentIndex, setCurrentIndex] = useState(0); // Track current slide index
+  const sliderRef = useRef(null);
+  const textRef = useRef(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
     "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -37,21 +40,25 @@ const Home = () => {
   }, [dispatch, error, alert]);
 
   useEffect(() => {
-    // Update the slider background and text
     const updateSlider = () => {
       if (sliderRef.current && textRef.current) {
         sliderRef.current.style.backgroundImage = `url('${images[currentIndex]}')`;
         textRef.current.innerText = texts[currentIndex];
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length); // Loop through images
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
       }
     };
 
-    // Set interval to update the slider every 4 seconds
     const interval = setInterval(updateSlider, 4000);
 
-    // Cleanup on unmount
     return () => clearInterval(interval);
   }, [currentIndex, images, texts]);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    alert.success("Logged out successfully!");
+    navigate("/login");
+  };
+  
 
   return (
     <>
@@ -75,6 +82,11 @@ const Home = () => {
                 <ProductCard key={product.id} product={product} />
               ))}
           </div>
+          {/* <div className="logout-container">
+            <button className="logout-button" onClick={handleLogout}>
+              Logout
+            </button>
+          </div> */}
         </>
       )}
     </>

@@ -47,6 +47,13 @@
   .logoutButton:hover {
     background-color: #e84148;
   } */
+  .logout-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  
   
 .header1 ul li{
     font-size: 20px;
